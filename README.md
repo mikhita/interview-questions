@@ -2,12 +2,12 @@
 - [Explain event delegation]
 answer: Event delegation is when a parent element automatically adds event listeners to its children elements. The event listener will fire anytime an event is triggered on the child element, due to event “bubbling” (event propagation).
 - [Explain how this works in JavaScript]
-answer: 
+answers: 
 If the new keyword is used when calling the function, this inside the function is a brand new object.
 function ConstructorExample() {
     console.log(this);
     this.value = 10;
-    console.log(this);
+    console.log(this)
 }
 new ConstructorExample();
 // -> {}
@@ -52,6 +52,3 @@ const obj = {
         return () => console.log(this);
     }
 };
-const arrowFn = obj.createArrowFn();
-arrowFn(); // -> { value: 'abc', createArrowFn: ƒ }
-Going back to the 3rd rule, when we call obj.createArrowFn(), this inside createArrowFn will be obj, as we’re calling it with dot notation. obj therefore gets bound to this in arrowFn. If we were to create an arrow function in the global scope, this would be window.
